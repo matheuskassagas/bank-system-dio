@@ -12,13 +12,13 @@ public abstract class Account implements GatewayOperacoes {
 
     private static int SEQUENCIAL = 1;
 
-    private Bank bankAgencia;
+    private Integer bankAgencia;
     private Integer numberAccount;
     private double balance;
     private User user;
 
     public Account(User user){
-        this.bankAgencia = (int) this.bankAgencia.getAgencia();
+        this.bankAgencia = new Bank().getAgencia();
         this.numberAccount = SEQUENCIAL++;
         this.user = user;
     }
@@ -56,7 +56,7 @@ public abstract class Account implements GatewayOperacoes {
     public void printExtract() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         System.out.println(String.format("Titular: %s", this.user.getName()));
-        System.out.println(String.format("Agencia: %d", new Bank().getAgencia()));
+        System.out.println(String.format("Agencia: %d", this.getBankAgencia()));
         System.out.println(String.format("Conta: %d", this.getNumberAccount()));
         System.out.println(String.format("Saldo: %.2f", this.getBalance()));
         System.out.println(String.format(sdf.format(new Date(System.currentTimeMillis())))+ "\n");

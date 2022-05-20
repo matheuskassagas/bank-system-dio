@@ -11,7 +11,7 @@ public class Bank {
     private static final int AGENCIA_PADRAO = 1;
     private static final String NOME = "Dio Bank";
 
-    private Integer agencia;
+    private Integer agencia = Bank.AGENCIA_PADRAO;
     private String bankName;
     private List<Account> accounts = new ArrayList<>();
 
