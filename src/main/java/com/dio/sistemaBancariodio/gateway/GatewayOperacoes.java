@@ -10,4 +10,6 @@ public interface GatewayOperacoes {
     void transfer (double value, GatewayOperacoes accountDestiny);
 
     void printExtract();
+
+    String printUser();
 }

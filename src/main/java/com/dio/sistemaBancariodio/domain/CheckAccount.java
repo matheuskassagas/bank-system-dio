@@ -1,12 +1,9 @@
 package com.dio.sistemaBancariodio.domain;
 
-
-
 import java.util.Calendar;
 import java.util.Date;
 
 public class CheckAccount extends Account {
-
 
     public CheckAccount(User user) {
         super(user);
