@@ -3,7 +3,7 @@ package com.dio.sistemaBancariodio.domain;
 import lombok.Data;
 
 @Data
-public class Endereco {
+public class Address {
 
     private String logradouro;
     private String numero;

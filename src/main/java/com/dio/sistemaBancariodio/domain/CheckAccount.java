@@ -1,29 +1,29 @@
 package com.dio.sistemaBancariodio.domain;
 
-import com.dio.sistemaBancariodio.gateway.GatewayOperacoes;
-import lombok.Data;
 
-@Data
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class CheckAccount extends Account {
 
-    @Override
-    public boolean withdraw(double valor) {
-        double withdraw = valor + (valor * 0.02);
-        return super.withdraw(withdraw);
+    public CheckAccount(User user) {
+        super(user);
     }
 
-    @Override
-    public void deposit(double value) {
-        
-    }
-
-    @Override
-    public void transfer(double value, GatewayOperacoes contaDestiny) {
-
+    public void bankFee(){
+        double tax = -49.9;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime((new Date(System.currentTimeMillis())));
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        while (day == 19 ){
+            super.setBalance(tax);
+        }
     }
 
     @Override
     public void printExtract() {
-
+        System.out.println("=== Extrato Conta Corrente ===");
+        super.printExtract();
     }
 }

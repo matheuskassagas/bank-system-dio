@@ -1,4 +1,4 @@
-package com.cursonelio.javaspringboot.cursoNelio.repository.entity.enuns;
+package com.dio.sistemaBancariodio.enums;
 
 public enum TipoCliente {
 

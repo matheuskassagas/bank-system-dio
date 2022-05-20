@@ -7,7 +7,7 @@ public interface GatewayOperacoes {
 
     void deposit (double value);
 
-    void transfer (double value, GatewayOperacoes contaDestiny);
+    void transfer (double value, GatewayOperacoes accountDestiny);
 
     void printExtract();
 }
