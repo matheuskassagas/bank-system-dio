@@ -27,12 +27,14 @@ public abstract class Account implements GatewayOperacoes {
     @Override
     public boolean withdraw(double value) {
         if(this.balance == 0 || this.balance < value ) {
-            System.out.println("Saldo insuficiente.");
+            System.out.println(getUser().getName() + ": Seu saldo é insuficiente.\n");
         }else{
             this.balance = this.balance - value;
+            return true;
         }
+        return false;
 
-        return true;
+
     }
 
     @Override
@@ -43,9 +45,12 @@ public abstract class Account implements GatewayOperacoes {
     @Override
     public void transfer(double value, GatewayOperacoes accountDestiny) {
         double tax = 10.5;
-        withdraw(value);
-        accountDestiny.deposit(value);
-        this.balance = this.balance - tax;
+        if(withdraw(value) == true){
+            withdraw(value);
+            accountDestiny.deposit(value);
+            this.balance = this.balance - tax;
+        }
+
     }
 
     @Override

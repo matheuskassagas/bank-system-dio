@@ -3,10 +3,7 @@ package com.dio.sistemaBancariodio.domain;
 import com.dio.sistemaBancariodio.enums.TipoCliente;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Data
 public class User {
@@ -18,6 +15,7 @@ public class User {
     private String password;
     private List<Address> addresses = new ArrayList<>();
     private Set<String> phone = new HashSet<>();
+
 
     public User() {
     }

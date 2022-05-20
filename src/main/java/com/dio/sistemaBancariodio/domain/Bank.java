@@ -1,12 +1,18 @@
 package com.dio.sistemaBancariodio.domain;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import lombok.Data;
 
-public class Banco {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void printUser() {
-/*        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+@Data
+public class Bank {
+
+    private String bankName;
+    private List<Account> accounts = new ArrayList<>();
+
+    public void printConta() {
+/*      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         System.out.println(String.format("Titular: %s", this.user.getName()));
         System.out.println(String.format("Agencia: %d", this.getAgencia()));
         System.out.println(String.format("Conta: %d", this.getNumberAccount()));
